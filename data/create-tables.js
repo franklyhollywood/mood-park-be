@@ -16,18 +16,21 @@ async function run() {
                     id SERIAL PRIMARY KEY,
                     email VARCHAR(256) NOT NULL,
                     hash VARCHAR(512) NOT NULL
-                );           
+                );
                 CREATE TABLE parks (
-                    id SERIAL PRIMARY KEY NOT NULL,
-                    name VARCHAR(512) NOT NULL,
-                    cool_factor INTEGER NOT NULL,
+                    id PRIMARY KEY NOT NULL,
+                    comments VARCHAR(1024) NOT NULL,
                     owner_id INTEGER NOT NULL REFERENCES users(id)
             );
+            CREATE TABLE favorites (
+              id PRIMARY KEY NOT NULL,
+              owner_id INTEGER NOT NULL REFERENCES users(id)
+      );
         `);
 
     console.log('create tables complete', getEmoji(), getEmoji(), getEmoji());
   }
-  catch(err) {
+  catch (err) {
     // problem? let's see the error...
     console.log(err);
   }
