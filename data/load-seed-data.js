@@ -28,10 +28,10 @@ async function run() {
     await Promise.all(
       favorite.map(fav => {
         return client.query(`
-                    INSERT INTO favorites (url, fullName, states, parkCode, description, activities, entranceFees, operatingHours, images, owner_id)
-                    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10);
+                    INSERT INTO favorites (url, fullName, states, parkCode, description, images, owner_id)
+                    VALUES ($1, $2, $3, $4, $5, $6, $7);
                 `,
-          [fav.url, fav.fullName, fav.states, fav.parkCode, fav.description, fav.activities, fav.entranceFees, fav.operatingHours, fav.images, user.id]);
+          [fav.url, fav.fullName, fav.states, fav.parkCode, fav.description, fav.images, user.id]);
       })
     );
 

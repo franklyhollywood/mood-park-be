@@ -5,9 +5,6 @@ module.exports = [
     states: '',
     parkCode: '',
     description: '',
-    activities: '',
-    entranceFees: '',
-    operatingHours: '',
     images: '',
     owner_id: 1
   },
@@ -17,9 +14,6 @@ module.exports = [
     states: '',
     parkCode: '',
     description: '',
-    activities: '',
-    entranceFees: '',
-    operatingHours: '',
     images: '',
     owner_id: 1
   },
@@ -29,9 +23,6 @@ module.exports = [
     states: '',
     parkCode: '',
     description: '',
-    activities: '',
-    entranceFees: '',
-    operatingHours: '',
     images: '',
     owner_id: 1
   }
