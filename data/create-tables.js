@@ -17,13 +17,10 @@ async function run() {
                     email VARCHAR(256) NOT NULL,
                     hash VARCHAR(512) NOT NULL
                 );
-                CREATE TABLE parks (
-                    id PRIMARY KEY NOT NULL,
-                    comments VARCHAR(1024) NOT NULL,
-                    owner_id INTEGER NOT NULL REFERENCES users(id)
-            );
+
             CREATE TABLE favorites (
-              id PRIMARY KEY NOT NULL,
+              id SERIAL PRIMARY KEY NOT NULL,
+              park_code VARCHAR (512) NOT NULL,
               owner_id INTEGER NOT NULL REFERENCES users(id)
       );
         `);
