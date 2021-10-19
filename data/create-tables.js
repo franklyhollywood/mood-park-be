@@ -25,9 +25,6 @@ async function run() {
               states VARCHAR NOT NULL,
               parkCode VARCHAR NOT NULL,
               description VARCHAR NOT NULL,
-              activities VARCHAR NOT NULL,
-              entranceFees VARCHAR NOT NULL,
-              operatingHours VARCHAR NOT NULL,
               images VARCHAR NOT NULL,
               owner_id INTEGER NOT NULL REFERENCES users(id)
       );
