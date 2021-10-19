@@ -20,7 +20,15 @@ async function run() {
 
             CREATE TABLE favorites (
               id SERIAL PRIMARY KEY NOT NULL,
-              park_code VARCHAR (512) NOT NULL,
+              url VARCHAR NOT NULL,
+              fullName VARCHAR NOT NULL,
+              states VARCHAR NOT NULL,
+              parkCode VARCHAR NOT NULL,
+              description VARCHAR NOT NULL,
+              activities VARCHAR NOT NULL,
+              entranceFees VARCHAR NOT NULL,
+              operatingHours VARCHAR NOT NULL,
+              images VARCHAR NOT NULL,
               owner_id INTEGER NOT NULL REFERENCES users(id)
       );
         `);
