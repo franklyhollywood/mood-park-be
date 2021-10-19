@@ -1,14 +1,38 @@
 module.exports = [
   {
-    park_code: 'abli',
+    url: 'abli',
+    fullName: '',
+    states: '',
+    parkCode: '',
+    description: '',
+    activities: '',
+    entranceFees: '',
+    operatingHours: '',
+    images: '',
     owner_id: 1
   },
   {
-    park_code: 'test 1',
+    url: 'test 1',
+    fullName: '',
+    states: '',
+    parkCode: '',
+    description: '',
+    activities: '',
+    entranceFees: '',
+    operatingHours: '',
+    images: '',
     owner_id: 1
   },
   {
-    park_code: 'test 2',
+    url: 'test 1',
+    fullName: '',
+    states: '',
+    parkCode: '',
+    description: '',
+    activities: '',
+    entranceFees: '',
+    operatingHours: '',
+    images: '',
     owner_id: 1
   }
 ];
