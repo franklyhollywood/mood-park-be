@@ -28,6 +28,12 @@ async function run() {
               images VARCHAR NOT NULL,
               owner_id INTEGER NOT NULL REFERENCES users(id)
       );
+            CREATE TABLE comments (
+              id SERIAL PRIMARY KEY NOT NULL,
+              comment VARCHAR NOT NULL,
+              parkcode VARCHAR NOT NULL,
+              owner_id INTEGER NOT NULL REFERENCES users(id)
+            );
         `);
 
     console.log('create tables complete', getEmoji(), getEmoji(), getEmoji());
