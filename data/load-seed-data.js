@@ -5,6 +5,7 @@ const favorite = require('./favorite.js');
 const usersData = require('./users.js');
 const { getEmoji } = require('../lib/emoji.js');
 run();
+const comments = require('./comments.js');
 
 async function run() {
 
@@ -19,7 +20,7 @@ async function run() {
                       VALUES ($1, $2)
                       RETURNING *;
                   `,
-          [user.email, hash]);
+        [user.email, hash]);
       })
     );
 
@@ -31,7 +32,17 @@ async function run() {
                     INSERT INTO favorites (url, fullName, states, parkCode, description, images, owner_id)
                     VALUES ($1, $2, $3, $4, $5, $6, $7);
                 `,
-          [fav.url, fav.fullName, fav.states, fav.parkCode, fav.description, fav.images, user.id]);
+        [fav.url, fav.fullName, fav.states, fav.parkCode, fav.description, fav.images, user.id]);
+      })
+    );
+
+    await Promise.all(
+      comments.map(comment => {
+        return client.query(`
+                    INSERT INTO comments (comment, parkcode, owner_id, park_timestamp)
+                    VALUES ($1, $2, $3, $4);
+                `,
+        [comment.comment, comment.parkcode, user.id, Date.now()]);
       })
     );
 

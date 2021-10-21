@@ -32,10 +32,35 @@ async function run() {
               id SERIAL PRIMARY KEY NOT NULL,
               comment VARCHAR NOT NULL,
               parkcode VARCHAR NOT NULL,
-              owner_id INTEGER NOT NULL REFERENCES users(id)
+              owner_id INTEGER NOT NULL REFERENCES users(id),
+              park_timestamp BIGINT NOT NULL
             );
         `);
+    console.log(`
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(256) NOT NULL,
+    hash VARCHAR(512) NOT NULL
+);
 
+CREATE TABLE favorites (
+id SERIAL PRIMARY KEY NOT NULL,
+url VARCHAR NOT NULL,
+fullName VARCHAR NOT NULL,
+states VARCHAR NOT NULL,
+parkCode VARCHAR NOT NULL,
+description VARCHAR NOT NULL,
+images VARCHAR NOT NULL,
+owner_id INTEGER NOT NULL REFERENCES users(id)
+);
+CREATE TABLE comments (
+id SERIAL PRIMARY KEY NOT NULL,
+comment VARCHAR NOT NULL,
+parkcode VARCHAR NOT NULL,
+owner_id INTEGER NOT NULL REFERENCES users(id),
+park_timestamp BIGINT NOT NULL
+);
+`);
     console.log('create tables complete', getEmoji(), getEmoji(), getEmoji());
   }
   catch (err) {
