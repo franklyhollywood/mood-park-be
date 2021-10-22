@@ -268,6 +268,8 @@ describe('app routes', () => {
           id: expect.any(Number),
           comment: expect.any(String),
           owner_id: expect.any(Number),
+          park_timestamp: expect.any(String),
+          parkcode: expect.any(String)
 
         }
       ];
@@ -312,4 +314,4 @@ describe('app routes', () => {
   });
 });
 
-//test completed 
+//test completed
